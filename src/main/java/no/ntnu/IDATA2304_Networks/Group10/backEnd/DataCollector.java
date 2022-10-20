@@ -1,6 +1,4 @@
-package no.ntnu.IDATA2304_Networks.Group10.Backend;
-
-import no.ntnu.IDATA2304_Networks.Group10.Backend.DataPlaceHolder;
+package no.ntnu.IDATA2304_Networks.Group10.backEnd;
 
 import java.util.ArrayList;
 import java.util.Iterator;
