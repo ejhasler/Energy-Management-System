@@ -24,8 +24,8 @@ public class App {
      * @throws IllegalStateException if some sensors are not found
      */
     private void initializeSensors() {
-//        SensorProvider sensorProvider = SensorProvider.getInstance();
-//        kwSensor = sensorProvider.getKwSensor();
+        SensorProvider sensorProvider = SensorProvider.getInstance();
+//        Sensor kwSensor = sensorProvider.getKwSensor();
 //        if (kwSensor == null) {
 //            throw new IllegalStateException("Temperature sensor not found");
 //        }
@@ -38,7 +38,6 @@ public class App {
 
     private double readKwSensor() {
 //        return lastKwReading.readValue();
-        //
         return 20;
     }
 
