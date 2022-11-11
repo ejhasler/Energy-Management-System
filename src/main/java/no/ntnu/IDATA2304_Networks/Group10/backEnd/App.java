@@ -3,7 +3,7 @@ package no.ntnu.IDATA2304_Networks.Group10.backEnd;
 public class App {
 
     private static final long SLEEP_DURATION_MS = 4000;
-    double lastKwReading;
+    double lastKwhReading;
 
     /**
      * Run the application
@@ -25,26 +25,26 @@ public class App {
      */
     private void initializeSensors() {
         SensorProvider sensorProvider = SensorProvider.getInstance();
-//        Sensor kwSensor = sensorProvider.getKwSensor();
-//        if (kwSensor == null) {
-//            throw new IllegalStateException("Temperature sensor not found");
-//        }
+        KwhSensor kwhSensor = sensorProvider.getKwhSensor();
+        if (kwhSensor == null) {
+            throw new IllegalStateException("Kwh sensor not found");
+        }
     }
 
     private void receiveDataFromSensor() {
         System.out.println("Recieving data from sensor....");
-        lastKwReading = readKwSensor();
+        lastKwhReading = readKwhSensor();
     }
 
-    private double readKwSensor() {
-//        return lastKwReading.readValue();
+    private double readKwhSensor() {
+//        return lastKwhReading.readValue();
         return 20;
     }
 
 
     private void sendDataToServer(){
         System.out.println("Sending data to server:");
-        System.out.println("    kw: " + lastKwReading + "Kw");
+        System.out.println("    kwh: " + lastKwhReading + "Kw");
         System.out.println("");
     }
 

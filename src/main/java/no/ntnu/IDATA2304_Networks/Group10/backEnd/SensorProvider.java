@@ -4,12 +4,12 @@ package no.ntnu.IDATA2304_Networks.Group10.backEnd;
  * Manages a collection of all available sensors
  */
 public class SensorProvider {
+  private final KwhSensor kwhSensor = new KwhSensor();
 
   private SensorProvider() {
-
   }
 
-  private static SensorProvider instance = new SensorProvider();
+  private static final SensorProvider instance = new SensorProvider();
 
   /**
    * Get a singleton instance of the class
@@ -20,10 +20,10 @@ public class SensorProvider {
   }
 
   /**
-   * Get access to the Kw sensor
-   * @access to the Kw sensor
+   * Get access to the Kwh sensor
+   * @access to the Kwh sensor
    */
-  public Object getKwSensor() {
-    return null;
+  public KwhSensor getKwhSensor() {
+    return kwhSensor;
   }
 }
