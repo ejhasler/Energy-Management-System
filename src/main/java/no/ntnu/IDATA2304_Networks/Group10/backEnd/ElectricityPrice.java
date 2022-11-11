@@ -4,12 +4,19 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 
+/**
+ * Returns current time and electricity price.
+ */
 public class ElectricityPrice {
     private double price;
 
     public ElectricityPrice() {
     }
 
+    /**
+     * Returns current time.
+     * @return Current time
+     */
     public int getDate() {
         Date currentDate = new Date();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HHmmss");
@@ -18,6 +25,10 @@ public class ElectricityPrice {
         return Integer.parseInt(simpleDateFormat.format(currentDate));
     }
 
+    /**
+     * Returns the current price of electricity.
+     * @return The current price of electricity
+     */
     public double getPrice() {
         ElectricityPrice electricityPrice = new ElectricityPrice();
         Random random = new Random();
