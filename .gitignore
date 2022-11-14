@@ -1,6 +1,11 @@
 .idea
 <<<<<<< HEAD
+<<<<<<< HEAD
 *.class
 =======
 /target
+>>>>>>> main
+=======
+/target
+*.class
 >>>>>>> main
