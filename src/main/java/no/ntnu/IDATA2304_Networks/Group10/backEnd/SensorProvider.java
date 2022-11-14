@@ -1,5 +1,7 @@
 package no.ntnu.IDATA2304_Networks.Group10.backEnd;
 
+import no.ntnu.IDATA2304_Networks.Group10.backEnd.Sensors.KwhSensor;
+
 /**
  * Manages a collection of all available sensors
  */

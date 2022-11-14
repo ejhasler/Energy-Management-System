@@ -1,5 +1,7 @@
 package no.ntnu.IDATA2304_Networks.Group10.backEnd;
 
+import no.ntnu.IDATA2304_Networks.Group10.backEnd.Sensors.KwhSensor;
+
 public class App {
 
     private static final long SLEEP_DURATION_MS = 4000;
