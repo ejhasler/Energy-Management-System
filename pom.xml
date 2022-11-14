@@ -10,8 +10,8 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -22,6 +22,10 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
+                <configuration>
+                    <source>9</source>
+                    <target>9</target>
+                </configuration>
             </plugin>
 
             <!-- Add a newer version of the JUnit test interface surefire, to be compliant with JUnit5 -->
@@ -60,7 +64,7 @@
                         <!--
                             set which of the goals in the plugin to execute. The JavaDoc plugin
                             has a total of 16 goals to choose from. See: https://maven.apache.org/plugins/maven-javadoc-plugin/
-                            The most common once beeing either "javadoc" or "jar"
+                            The most common once being either "javadoc" or "jar"
                         -->
                         <goals>
                             <goal>javadoc</goal>
@@ -78,11 +82,21 @@
     </build>
 
     <dependencies>
-        <!-- Add dependecy to the core-library of JavaFX -->
+        <!-- Add dependency to the core-library of JavaFX -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx</artifactId>
+            <version>19</version>
+        </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>17.0.2</version>
+            <version>19</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics</artifactId>
+            <version>19</version>
         </dependency>
 
         <!--
@@ -92,7 +106,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>5.7.1</version>
+            <version>5.9.0</version>
             <scope>test</scope>
         </dependency>
 
