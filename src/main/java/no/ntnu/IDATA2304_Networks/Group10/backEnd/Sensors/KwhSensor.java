@@ -33,7 +33,7 @@ public class KwhSensor {
     if (time.isBefore(LocalTime.of(10,0))) {
       this.kwh_Usage = random.nextDouble(0, 0.5000);
     } else if (time.isAfter(LocalTime.of(10,0)) && (time.isBefore(LocalTime.of(16,0)))) {
-      this.kwh_Usage = random.nextDouble(0,0.2000);
+      this.kwh_Usage = random.nextDouble(0,0.1500);
     } else if (time.isAfter(LocalTime.of(16,0))) {
       this.kwh_Usage = random.nextDouble(1.0000,2.0000);
     }
