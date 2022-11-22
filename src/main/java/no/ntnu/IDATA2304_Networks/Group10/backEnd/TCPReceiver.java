@@ -1,4 +1,4 @@
-package ntnu.no.ejhasler.backend.Server;
+package no.ntnu.IDATA2304_Networks.Group10.Backend;
 
 import java.io.*;
 import java.net.*;
