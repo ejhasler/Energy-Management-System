@@ -1,11 +1,15 @@
 .idea
+.vscode
 <<<<<<< HEAD
 <<<<<<< HEAD
 *.class
 =======
 /target
+.vscode
 >>>>>>> main
 =======
 /target
 *.class
+.vscode
 >>>>>>> main
+.vscode
