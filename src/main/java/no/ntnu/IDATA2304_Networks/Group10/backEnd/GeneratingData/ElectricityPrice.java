@@ -1,4 +1,4 @@
-package no.ntnu.IDATA2304_Networks.Group10.backEnd;
+package no.ntnu.IDATA2304_Networks.Group10.backEnd.GeneratingData;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
