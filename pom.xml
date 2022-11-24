@@ -96,6 +96,15 @@
             <scope>test</scope>
         </dependency>
 
+        <!--
+        Dependency for MariaDB jdbc
+        -->
+        <dependency>
+            <groupId>org.mariadb.jdbc</groupId>
+            <artifactId>mariadb-java-client</artifactId>
+            <version>3.0.6</version>
+        </dependency>
+
     </dependencies>
 
 </project>
