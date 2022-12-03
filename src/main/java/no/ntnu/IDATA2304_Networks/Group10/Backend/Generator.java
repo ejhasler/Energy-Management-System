@@ -1,4 +1,4 @@
-package Backend;
+package no.ntnu.IDATA2304_Networks.Group10.Backend;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
