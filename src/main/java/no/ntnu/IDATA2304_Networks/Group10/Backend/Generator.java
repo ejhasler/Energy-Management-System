@@ -10,6 +10,9 @@ import java.util.Random;
 /**
  * Returns current date, current time and  current electricity price.
  * Used to generate data which can be used to send to the client.
+ *
+ * @author Group10
+ * @version 02.12.2022
  */
 public class Generator {
     private double price;
