@@ -20,7 +20,7 @@
 * Web
 
 #### Generated Data
-<p>In this project, we are generating dummy data for the application. The data include kWh measurements and the date for when that usage took place. The data will be sent to a client where it is going to be formatted and using TCP protocol  </p>
+<p>In this project, we are generating dummy data for the application. The data include kWh measurements and the date for when that usage took place. The data will be sent to a clientServer where it is going to be formatted and using TCP protocol  </p>
 
 #### Socket Programming
 <p> In this section we have choosen to use TCP protocol, instead of UDP. TCP is more realiable and based on point-to-point where we have one sender and one receiver. Also the TCP protocol is connection-oriented and flow controlled.</p>
