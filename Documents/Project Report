@@ -7,3 +7,9 @@ However, it is difficult to know where we are using using electricity, how much 
 tracking your Kwh usage and the electricity price in your area this application provides the information needed to
 better control electricity usage.
 
+
+### Introduction
+
+- Our solution are planned to work in every home. We have planned the project to be implemented in every home with a simple sensor, and connect it with our website.
+- The problem our project surround is related to energy consumption. The tremendous increase in electricity prices and the lack of electricity in the world makes this a quite relevant problem. The program takes mesurements inside houses to log the energy consumption. This data will be analysed and used in order to present different savings schemes for energy to the user. Our diagrams or schemes will help induviduals save money and electricity, and help companies to optimize their usage of energy.
+- The program resolve around a kWh sensor which log the usage of kw. **Need further writing...**
