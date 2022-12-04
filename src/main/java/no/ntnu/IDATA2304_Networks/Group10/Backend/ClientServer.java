@@ -30,7 +30,7 @@ public class ClientServer {
     private static Statement st;
 
     //Name of the table that the data will go into
-    private String tableName = "UserData";
+    private static final String tableName = "UserData";
 
     private static Connection con;
 
@@ -44,12 +44,11 @@ public class ClientServer {
      * @throws SQLException if error when connecting to database
      */
     public static void main(String[] args) throws IOException, SQLException {
-        ClientServer clientServer = new ClientServer();
         Socket socket = new Socket("localhost",4999);
         PrintWriter pr = new PrintWriter(socket.getOutputStream());
         InputStreamReader in = new InputStreamReader(socket.getInputStream());
         BufferedReader bf = new BufferedReader(in);
-        clientServer.connectToDatabase();
+        ClientServer.connectToDatabase();
         Boolean keepGoing = true;
         int timesSendtData = 0;
 
@@ -57,7 +56,7 @@ public class ClientServer {
             pr.println(REQUEST);
             pr.flush();
 
-            clientServer.sendToDatabase(bf);
+            ClientServer.sendToDatabase(bf);
             timesSendtData++;
             if (timesSendtData ==100){
                 keepGoing=false;
@@ -73,7 +72,7 @@ public class ClientServer {
      * @param bf buffer reader from the client
      * @throws IOException Throws exception in case of buffered reader not able to read line
      */
-    private void sendToDatabase(BufferedReader bf) throws IOException {
+    private static void sendToDatabase(BufferedReader bf) throws IOException {
         String sqlQuery = "INSERT INTO " + tableName + "(" + tableAttributes +
             ") VALUES(" + bf.readLine() + ",'" + bf.readLine() + "','" + bf.readLine() + "','" +
             bf.readLine()+"');";
@@ -94,7 +93,7 @@ public class ClientServer {
     /**
      * Connect to the database with url, username and password
      */
-    private void connectToDatabase(){
+    private static void connectToDatabase(){
         try {
             con = DriverManager.getConnection(DATABASE_URL, USERNAME, PASSWORD);
             System.out.println("Connection Established successfully");

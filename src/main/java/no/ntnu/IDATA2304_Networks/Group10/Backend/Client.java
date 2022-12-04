@@ -25,7 +25,6 @@ public class Client {
      * @throws IOException if the system can't sleep
      */
     public static void main(String[] args) throws IOException {
-        Client client = new Client();
         generator = new Generator();
         serverSocket = new ServerSocket(4999);
         socket = serverSocket.accept();
@@ -38,7 +37,7 @@ public class Client {
 
             String str = br.readLine();
             System.out.println("Client: " + str);
-            client.sendData();
+            Client.sendData();
 
             try {
                 Thread.sleep(600000); // 10 minutes sleep between
@@ -53,7 +52,7 @@ public class Client {
      * Send data to the receiver socket for further handling.
      * Crashes if the socket can't send information to the receiver.
      */
-    private void sendData(){
+    private static void sendData(){
         try {
             PrintWriter pr = new PrintWriter(socket.getOutputStream());
             pr.println(generator.getPrice());
