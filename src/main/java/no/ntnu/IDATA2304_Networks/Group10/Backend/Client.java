@@ -1,8 +1,6 @@
 package no.ntnu.IDATA2304_Networks.Group10.Backend;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -26,17 +24,9 @@ public class Client {
      */
     public static void main(String[] args) throws IOException {
         generator = new Generator();
-        serverSocket = new ServerSocket(4999);
-        socket = serverSocket.accept();
-        Boolean connected = true;
-        while(connected) {
+        socket = new Socket("localhost",4999);
+        while(true) {
             System.out.println("Connected");
-
-            InputStreamReader in = new InputStreamReader(socket.getInputStream());
-            BufferedReader br = new BufferedReader(in);
-
-            String str = br.readLine();
-            System.out.println("Client: " + str);
             Client.sendData();
 
             try {

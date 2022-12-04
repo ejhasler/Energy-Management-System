@@ -2,6 +2,7 @@ package no.ntnu.IDATA2304_Networks.Group10.Backend;
 
 
 import java.io.*;
+import java.net.ServerSocket;
 import java.net.Socket;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -36,6 +37,8 @@ public class ClientServer {
 
     //The name of the attributes in the table
     private static final String tableAttributes = "kWh,Date,Time,Year";
+    private static Socket socket;
+    private static ServerSocket serverSocket;
 
     /**
      * The main method to run the client class.
@@ -44,21 +47,19 @@ public class ClientServer {
      * @throws SQLException if error when connecting to database
      */
     public static void main(String[] args) throws IOException, SQLException {
-        Socket socket = new Socket("localhost",4999);
-        PrintWriter pr = new PrintWriter(socket.getOutputStream());
+        serverSocket = new ServerSocket(4999);
+        socket = serverSocket.accept();
         InputStreamReader in = new InputStreamReader(socket.getInputStream());
         BufferedReader bf = new BufferedReader(in);
         ClientServer.connectToDatabase();
         Boolean keepGoing = true;
-        int timesSendtData = 0;
+        int timesSentData = 0;
 
         while(keepGoing) {
-            pr.println(REQUEST);
-            pr.flush();
 
             ClientServer.sendToDatabase(bf);
-            timesSendtData++;
-            if (timesSendtData ==100){
+            timesSentData++;
+            if (timesSentData ==100){
                 keepGoing=false;
             }
         }
