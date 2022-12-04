@@ -25,8 +25,6 @@ public class ClientServer {
     private static final String USERNAME = "group10@h328964";
     //Password used to connect to the database
     private static final String PASSWORD = "evensivert123";
-    //Request sent to server for connection
-    private static final String REQUEST = "Can I receive data?";
 
     private static Statement st;
 
