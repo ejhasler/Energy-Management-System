@@ -16,7 +16,11 @@ Due to the worlds situation the electricity prices in Europe, including Norway h
 However, it is difficult to know where we are using using electricity, how much we are using and what it costs. By
 tracking your Kwh usage and the electricity price in your area this application provides the information needed to
 better control electricity usage.
+<<<<<<< Updated upstream
 >>>>>>> main
+=======
+>>>>>>> bc3829f2e3c43fbbb114026b1069253c6d39951e
+>>>>>>> Stashed changes
 
 
 ## **Introduction**
@@ -74,4 +78,8 @@ Some future implementation and stuff
 ### References
 
 References
+<<<<<<< Updated upstream
 >>>>>>> main
+=======
+>>>>>>> bc3829f2e3c43fbbb114026b1069253c6d39951e
+>>>>>>> Stashed changes
