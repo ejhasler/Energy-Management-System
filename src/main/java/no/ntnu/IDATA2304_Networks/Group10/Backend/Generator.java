@@ -15,7 +15,7 @@ import java.util.Random;
  * @version 02.12.2022
  */
 public class Generator {
-    private double price;
+    private double usage;
     private DecimalFormat decimalFormat = new DecimalFormat("#.##", new DecimalFormatSymbols(Locale.US));
     public Generator() {
         //Left empty on purpose
@@ -73,21 +73,21 @@ public class Generator {
      *
      * @return The current price of electricity
      */
-    public String getPrice() {
+    public String getUsage() {
         Generator electricityPrice = new Generator();
         Random random = new Random();
-        if ((electricityPrice.getCurrentTime() >= 100000) || (electricityPrice.getCurrentTime() <= 140000)) {
-            price = 20.33 + random.nextDouble(15);
+        if ((electricityPrice.getCurrentTime() >= 100000) & (electricityPrice.getCurrentTime() <= 140000)) {
+            this.usage = 0.13 + random.nextDouble(0.04);
         }
-        else if ((electricityPrice.getCurrentTime() >= 140001) || (electricityPrice.getCurrentTime() <= 180000))  {
-            price = 30.15 + random.nextInt(25);
+        else if ((electricityPrice.getCurrentTime() >= 140001) & (electricityPrice.getCurrentTime() <= 180000))  {
+            this.usage = 0.26 + random.nextDouble(0.10);
         }
-        else if ((electricityPrice.getCurrentTime() >= 180001) || (electricityPrice.getCurrentTime() <= 235959)) {
-            price = 25.79 + random.nextInt(15);
+        else if ((electricityPrice.getCurrentTime() >= 180001) & (electricityPrice.getCurrentTime() <= 235959)) {
+            this.usage = 0.34 + random.nextDouble(0.09);
         }
         else {
-            price = 8.88 + random.nextInt(13);
+            this.usage = 0.13 + random.nextDouble(0.08);
         }
-        return decimalFormat.format(price);
+        return decimalFormat.format(this.usage);
     }
 }
