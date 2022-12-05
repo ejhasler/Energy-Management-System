@@ -1,8 +1,22 @@
+<<<<<<< HEAD
 # **Project Report IDATA2304 2022**
 This IoT Project is a school project made by four computer engineer students in the course IDATA2304 Computer networks.
 
 ## **Abstract**
 Due to the worlds situation the electricity prices in Europe, including Norway has increased drastically the last year. However, it is difficult to know where we are using using electricity, how much we are using and what it costs. By tracking your Kwh usage and the electricity price in your area this application provides the information needed to better control electricity usage. It provides a summary of your electricity consumption by taking the information about your usage and display it in a well structured graph. Both gathering information with real sensors and generating dummy data has been tested, but dummy data is the currently used procedure in our version. In a later version both real sensors and combination with electricity price focused on ones area would be implemented.
+=======
+
+# Project Report IDATA2304 2022
+
+This IoT Project is a school project made by four computer science students in the course IDATA2304 Computer networks.
+
+### Abstract
+
+Due to the worlds situation the electricity prices in Europe, including Norway has increased drastically the last year.
+However, it is difficult to know where we are using using electricity, how much we are using and what it costs. By
+tracking your Kwh usage and the electricity price in your area this application provides the information needed to
+better control electricity usage.
+>>>>>>> main
 
 
 ## **Introduction**
@@ -12,6 +26,7 @@ The problem we are planning to solve is related to energy consumption. Our solut
 
 ## **Theory and technology**
 
+<<<<<<< HEAD
 ### Structure of application
 
 This is the structure of our ducking report shit stuff.![UML diagram, showing the structure of the application](uml_bby.png)
@@ -37,3 +52,26 @@ Our data is transmitted from a simple java backend to a central database. This d
 ## **Referances**
 
 1. [Researchgate](https://www.researchgate.net/figure/Example-of-power-consumption-of-a-household-over-a-24-hour-period-measured-in-kW_fig3_235644349), picture visualizing the the consetp used in generator class. (03.12.2022, Researchgate)
+=======
+Write theory and technology here
+
+### Methodology
+
+Write methodology here
+
+### Results
+
+Resultater skal her
+
+### Discussion
+
+Some discussion or something
+
+### Conclusion and future work
+
+Some future implementation and stuff
+
+### References
+
+References
+>>>>>>> main
