@@ -56,9 +56,7 @@ public class ServerClient {
 
         while(keepGoing) {
 
-            ServerClient.connectToDatabase();
             ServerClient.sendToDatabase(bf);
-            ServerClient.terminateConnectionToDB();
             timesSentData++;
             if (timesSentData ==100){
                 keepGoing=false;
@@ -82,6 +80,7 @@ public class ServerClient {
                 ",'" + bf.readLine() + "');";
         System.out.println(sqlQuery1);
         System.out.println(sqlQuery2);
+        ServerClient.connectToDatabase();
         try{
             st = con.createStatement();
             ResultSet rs = st.executeQuery(sqlQuery1);
@@ -90,6 +89,7 @@ public class ServerClient {
             rs.next();
             st.close();
             System.out.println("Data sent to dbms");
+            ServerClient.terminateConnectionToDB();
         }catch (Exception e){
             System.out.println("Something went wrong: "+ e.getMessage());
         }
