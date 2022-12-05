@@ -84,10 +84,13 @@ Our data is transmitted from a simple java backend to a central database. This d
 
 ## **Discussion**
 
+We wanted to get data from a sensor and tried getting data from a raspberry pi which measures the temperature. With the temperature measurer we were able to make a graph which updates every 0,5 seconds. Sadly, the raspberry pi short circuited, and we figured that it would be better to use generated data. The generated data would be better for what we were trying to make but figured that we could implement the raspberry pi data in the future.     
+
 
 
 ## **Conclusion and Future Work**
 
+The prototype of the application currently provides us with the ability to see the current spot price and electricity usage, and combines these two to give us the total cost per hour in kroner. In the future we wish to give the user real data which have been taken from a reliable source, along with a way of measuring the electricity usage in different rooms. With the real data it will be easier to calculate the electricity bill for the next month, which can help people manage their economy. To give the application better security, we wish to give the web page an SSL-key to encrypt it. We also hope to give users a login to give them full insight on their data, along with extra security for users. 
 
 
 ## **Referances**
