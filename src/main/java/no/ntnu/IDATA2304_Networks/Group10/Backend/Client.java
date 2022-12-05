@@ -43,18 +43,19 @@ public class Client {
      */
     private static void sendData(){
         try {
+            String dateAndTime = generatorUsage.getDate()+" " + generatorUsage.getCurrentHour();
             PrintWriter pr = new PrintWriter(socket.getOutputStream());
             pr.println(generatorUsage.getUsage());
             pr.flush();
-            pr.println(generatorUsage.getDate()+" " + generatorUsage.getCurrentHour());
+            pr.println(dateAndTime);
             pr.flush();
-            double price = (Double.parseDouble(generatorUsage.getSpotPrice()) *Double.parseDouble(generatorUsage.getUsage()))/100;
+            double price = (Double.parseDouble(generatorUsage.getSpotPrice()) * Double.parseDouble(generatorUsage.getUsage()))/100;
             pr.println(price);
             pr.flush();
 
             pr.println(generatorUsage.getSpotPrice());
             pr.flush();
-            pr.println(generatorUsage.getDate() + " " + generatorUsage.getCurrentHour());
+            pr.println(dateAndTime);
             pr.flush();
         }catch (IOException ioException){
             System.out.println("Something went wrong, could not send data: "+ioException.getMessage());
