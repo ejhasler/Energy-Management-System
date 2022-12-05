@@ -34,7 +34,7 @@ public class ClientServer {
     private static Connection con;
 
     //The name of the attributes in the table
-    private static final String tableAttributes = "kWh,Date,Time,Year";
+    private static final String tableAttributes = "kWh,Time";
     private static Socket socket;
     private static ServerSocket serverSocket;
 
@@ -73,8 +73,7 @@ public class ClientServer {
      */
     private static void sendToDatabase(BufferedReader bf) throws IOException {
         String sqlQuery = "INSERT INTO " + tableName + "(" + tableAttributes +
-            ") VALUES(" + bf.readLine() + ",'" + bf.readLine() + "','" + bf.readLine() + "','" +
-            bf.readLine()+"');";
+            ") VALUES(" + bf.readLine() + ",'" + bf.readLine() + "');";
 
         System.out.println(sqlQuery);
         try{
