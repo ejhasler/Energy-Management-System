@@ -27,11 +27,12 @@ This is a prototype solution created by four computer science students in the co
 
 
 ## **Abstract**
-We are globally going into a world situation where the energy prices, gas prices, inflation and the interest rates are reaching for the sky. These factors are creating extremely high energy and consume prices, and are making it very diffiult for families and people to be able to pay their electrisity bills. 
+The world is going into a global crisis situation where the energy prices, gas prices, inflation and the interest rates are reaching for the sky. These factors are causing extremely high energy and consume prices, and is making it very difficult for people to pay their electricity bills. 
 
-Reading all these news almost everyday, we was encouraged to create something for the people that would make it easier for them to have control over their Energy Usage and how much the cost are going to be. So we created a prototype where users can get a full overview of their electricity consumption. Users can see what they use electricity for and can take charge of when it is the cheapest spot price. This gives the ability to reduce your energy consumption and use energy when it is cheapest during the day. We have discussed with some people where they agreed that this prototype solution could have big impact on their energy consumption and that it would help them become more aware of their usage. We have also tested with real sensors, but our Raspberri Pi short circuited, but we continued the process with dummy data.
+Because of all the problems this has caused, as well as the media attention, we were encouraged to create something that would make it easier for people to have control of their energy usage, and the cost of this. Therefore, we created a prototype where the user is provided with a full rundown of their electricity consumption. Users can see where they use the most electricity and what the price is on during the day. With this people can reduce their energy consumption and organize it to when it is cheapest during the day. From discussions people has agreed what this prototype solution could have a big impact on their electricity usage and help them become more aware of it. We have tested with real sensors, but our Raspberry Pi short circuited, therefore we continued the process with dummy data.  
 
-The results of our solution helps the users become more aware, use less energy, and use energy at the cheapest time during the day. Possible future reasearch directions includes statistics, room sensors, multiple homes, login and register function and analysis.
+Our solution results in better awareness, less and cheaper energy usage. Possible future additions include statistics, sensors stationed in multiple rooms and homes, login and register function and analysis. 
+
 
 ## **Introduction**
 
