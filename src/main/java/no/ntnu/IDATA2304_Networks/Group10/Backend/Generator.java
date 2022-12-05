@@ -77,16 +77,16 @@ public class Generator {
         Generator electricityPrice = new Generator();
         Random random = new Random();
         if ((electricityPrice.getCurrentTime() >= 100000) & (electricityPrice.getCurrentTime() <= 140000)) {
-            this.usage = 0.13 + random.nextDouble(0.04);
+            this.usage = 0.78 + random.nextDouble(0.24);
         }
         else if ((electricityPrice.getCurrentTime() >= 140001) & (electricityPrice.getCurrentTime() <= 180000))  {
-            this.usage = 0.26 + random.nextDouble(0.10);
+            this.usage = 1.56 + random.nextDouble(0.6);
         }
         else if ((electricityPrice.getCurrentTime() >= 180001) & (electricityPrice.getCurrentTime() <= 235959)) {
-            this.usage = 0.34 + random.nextDouble(0.09);
+            this.usage = 2.04 + random.nextDouble(0.54);
         }
         else {
-            this.usage = 0.13 + random.nextDouble(0.08);
+            this.usage = 0.78 + random.nextDouble(0.48);
         }
         return decimalFormat.format(this.usage);
     }
