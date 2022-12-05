@@ -1,17 +1,39 @@
-# Project Report IDATA2304 2022
+# **Project Report IDATA2304 2022**
 This IoT Project is a school project made by four computer engineer students in the course IDATA2304 Computer networks.
 
-### Abstract
-Due to the worlds situation the electricity prices in Europe, including Norway has increased drastically the last year.
-However, it is difficult to know where we are using using electricity, how much we are using and what it costs. By
-tracking your Kwh usage and the electricity price in your area this application provides the information needed to
-better control electricity usage.
+## **Abstract**
+Due to the worlds situation the electricity prices in Europe, including Norway has increased drastically the last year. However, it is difficult to know where we are using using electricity, how much we are using and what it costs. By tracking your Kwh usage and the electricity price in your area this application provides the information needed to better control electricity usage. It provides a summary of your electricity consumption by taking the information about your usage and display it in a well structured graph. Both gathering information with real sensors and generating dummy data has been tested, but dummy data is the currently used procedure in our version. In a later version both real sensors and combination with electricity price focused on ones area would be implemented.
 
 
-### Introduction
+## **Introduction**
 
 The problem we are planning to solve is related to energy consumption. Our solution is planned to be easily implemented in every home or construction that wants to have better control over their energy consumption. The tremendous rise in electricity prices in Norway and the global energy crisis makes a solution wich helps with decreasing the energy consumption is both relevant to the energy crisis on a global level and for induviduals which take a big burden due to the high electricity prices.
 
 
-### Theory and technology
+## **Theory and technology**
 
+### Structure of application
+
+This is the structure of our ducking report shit stuff.![UML diagram, showing the structure of the application](uml_bby.png)
+
+### Database
+
+The application uses a database to store the gathered data, the database is hosted in PHP using a MariaDB server. To send the information from the program to the database, we used Java Database Connectivity (JDBC) to establish a connection to the MariaDB server. By using an INSERT query, the data is organized correctly into the database. The database is the applications memory, it handles all our data and makes it possible to manipulate it in the directions wanted. It is used to print out graphs visualizing the electricity usage.
+
+### TCP and DataTransfere
+
+Our program relies on reliable data transfer. In order to transfer the given data from the generator or sensor it is crucial that every detail of the information is transferred. To ensure this we use the data transfer protocol TCP in our backend between the two classes which is crucial for the data. The usage of TCP makes the data transfer solid so we can upload the data to our database, which then can be printed out on the website. If we decided that TCP was not necessary and tried using a different transfer protocol like UDP, we could not ensure valid data. This may cause the data displayed on our website to be unreliable or even corrupted. The cause of this is that the UDP protocol does not have a 3-way handshake to guarantee the data being transmitted correct and received. Our application could work with UDP, but we could not ensure that the graph or the data we present on our sites are correct and viable.
+
+### Generating Data
+
+Through out the project, data was needed to be able to represent the electricity usage. Here we looked at several options. One being an electricity plug where one could get the electricity used by the device which was plugged in. This would be a good option, but the plugs found already had an app which returned this information. We ended up with generating data. This way we could make data which represent electricity usage from a whole house. 
+To get data which we can use to represent the electricity usage, we created a class which returns the generated data. The data which we retrieve from the generator is the current time, date, and electricity usage. The data is based on the electricity usage of an average household, and to make the generated data as realistic a possible, the data returned is based on the current time of the day. We could see from different charts, that from 00:00 to 10:00 the levels stayed almost the same, with little to no change. From 10:00 to 14:00 the levels went noticeably up, and when adding a range, the output data would be realistic. From 14:00 to 18:00 we saw that the numbers stayed almost the same, but the real change came around 18:00 to 00:00. Here the electricity usage spiked, but due to it having variations of usage, a range was added to make it realistic. ![Electricity usage inn homes](electricityUsage.png)<sub> 1. Researchgate</sub>
+
+## Result
+
+Our data is transmitted from a simple java backend to a central database. This database is hosted on a server which our website retrieves information from. The data in the database is sent by our java backend. The backend is made up of 3 classes, a generator, which generate data to mimic a sensor, a client, which operates as a bridge for the data to be transferred, a client/server, which have a shared responsibility both as a server receiving the data from the sensor and client and as a client that’s forward the data to the database.
+
+
+## **Referances**
+
+1. [Researchgate](https://www.researchgate.net/figure/Example-of-power-consumption-of-a-household-over-a-24-hour-period-measured-in-kW_fig3_235644349), picture visualizing the the consetp used in generator class. (03.12.2022, Researchgate)
