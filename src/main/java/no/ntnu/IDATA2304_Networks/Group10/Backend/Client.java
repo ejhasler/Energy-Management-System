@@ -30,7 +30,7 @@ public class Client {
             Client.sendData();
 
             try {
-                Thread.sleep(600000); // 10 minutes sleep between
+                Thread.sleep(3600000); // 60 minutes sleep between
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
