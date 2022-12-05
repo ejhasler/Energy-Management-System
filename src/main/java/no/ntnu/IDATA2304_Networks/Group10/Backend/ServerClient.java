@@ -17,7 +17,7 @@ import java.sql.Statement;
  * @author Group 10
  * @version 03.12.2022
  */
-public class ClientServer {
+public class ServerClient {
 
     //The url for the database
     private static final String DATABASE_URL = "jdbc:mariadb://mysql690.loopia.se/haslerud_tech";
@@ -51,13 +51,14 @@ public class ClientServer {
         socket = serverSocket.accept();
         InputStreamReader in = new InputStreamReader(socket.getInputStream());
         BufferedReader bf = new BufferedReader(in);
-        ClientServer.connectToDatabase();
         Boolean keepGoing = true;
         int timesSentData = 0;
 
         while(keepGoing) {
 
-            ClientServer.sendToDatabase(bf);
+            ServerClient.connectToDatabase();
+            ServerClient.sendToDatabase(bf);
+            ServerClient.terminateConnectionToDB();
             timesSentData++;
             if (timesSentData ==100){
                 keepGoing=false;
@@ -101,10 +102,18 @@ public class ClientServer {
     private static void connectToDatabase(){
         try {
             con = DriverManager.getConnection(DATABASE_URL, USERNAME, PASSWORD);
-            System.out.println("Connection Established successfully");
+            System.out.println("Connection to database established successfully");
         }catch (Exception e){
             System.out.println("Something went wrong: " + e.getMessage());
         }
+    }
 
+    private static void terminateConnectionToDB(){
+        try {
+            con.close();
+            System.out.println("Connection to the database closed....");
+        } catch(SQLException sqlE){
+            System.out.println("Could not terminate the connection: " + sqlE.getMessage());
+        }
     }
 }
