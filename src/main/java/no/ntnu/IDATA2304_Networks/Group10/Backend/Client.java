@@ -45,7 +45,7 @@ public class Client {
     private static void sendData(){
         try {
             PrintWriter pr = new PrintWriter(socket.getOutputStream());
-            pr.println(generator.getPrice());
+            pr.println(generator.getUsage());
             pr.flush();
             pr.println(generator.getDate());
             pr.flush();
