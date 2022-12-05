@@ -13,13 +13,16 @@ The problem we are planning to solve is related to energy consumption. Our solut
 
 ### Structure of application
 
-This is the structure of our ducking report shit stuff.![UML diagram, showing the structure of the application](uml_bby.png)
+Our project consists of 5 nodes. By nodes we mean different connection points in our structure where the data is either formated or tranfered further to other nodes. We can devide our application into 2 layers, constisting of backend and frontend. In the front end we have 3 nodes, these are the dbms server, which host the database and allows us to store data and retrieve the data inside the database, the web server, which is the domain holding the different html pages and the php and js scripts, and the web browser, which displays the website and execute the scripts resolving in SQL requests to the dbms retrieving data from the database. 
+
+The backend components are the client.java and ClientServer.java. Client.java are formatting the data recieved from a generator which works as an virtuel sensor, and sending it to the ClientServer.java. The job of ClientServer.java is to act as a server for the client class and a client for the dbms server. By this we mean that the server's responsebility is to wait for the client to send data, the client's responsebility is to handle the data, format it into a sql insert query and then connect to the dbms and run the sql query. Under is a UML chart og how the nodes communicates.
+"This is the structure of our ducking report shit stuff."![UML diagram, showing the structure of the application](uml_bby.png)
 
 ### Database
 
 The application uses a database to store the gathered data, the database is hosted in PHP using a MariaDB server. To send the information from the program to the database, we used Java Database Connectivity (JDBC) to establish a connection to the MariaDB server. By using an INSERT query, the data is organized correctly into the database. The database is the applications memory, it handles all our data and makes it possible to manipulate it in the directions wanted. It is used to print out graphs visualizing the electricity usage.
 
-### TCP and DataTransfere
+### TCP and datatransfere
 
 Our program relies on reliable data transfer. In order to transfer the given data from the generator or sensor it is crucial that every detail of the information is transferred. To ensure this we use the data transfer protocol TCP in our backend between the two classes which is crucial for the data. The usage of TCP makes the data transfer solid so we can upload the data to our database, which then can be printed out on the website. If we decided that TCP was not necessary and tried using a different transfer protocol like UDP, we could not ensure valid data. This may cause the data displayed on our website to be unreliable or even corrupted. The cause of this is that the UDP protocol does not have a 3-way handshake to guarantee the data being transmitted correct and received. Our application could work with UDP, but we could not ensure that the graph or the data we present on our sites are correct and viable.
 
