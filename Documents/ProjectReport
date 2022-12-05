@@ -1,10 +1,18 @@
-# **Project Report IDATA2304 2022**
-This IoT Project is a school project made by four computer engineer students in the course IDATA2304 Computer networks.
+![Logo](logo1.png)
+
+# **Project Report IDATA2304 Autumn 2022**
+This is a prototype solution created by four computer science students in the course IDATA2304 Computer Networks.
 
 ## **Abstract**
-Due to the worlds situation the electricity prices in Europe, including Norway has increased drastically the last year. However, it is difficult to know where we are using using electricity, how much we are using and what it costs. By tracking your Kwh usage and the electricity price in your area this application provides the information needed to better control electricity usage. It provides a summary of your electricity consumption by taking the information about your usage and display it in a well structured graph. Both gathering information with real sensors and generating dummy data has been tested, but dummy data is the currently used procedure in our version. In a later version both real sensors and combination with electricity price focused on ones area would be implemented.
+We are globally going into a world situation where the energy prices, gas prices, inflation and the interest rates are reaching for the sky. These factors are creating extremely high energy and consume prices, and are making it very diffiult for families and people to be able to pay their electrisity bills. 
+
+Reading all these news almost everyday, we was encouraged to create something for the people that would make it easier for them to have control over their Energy Usage and how much the cost are going to be. So we created a prototype where users can get a full overview of their electricity consumption. Users can see what they use electricity for and can take charge of when it is the cheapest spot price. This gives the ability to reduce your energy consumption and use energy when it is cheapest during the day. We have discussed with some people where they agreed that this prototype solution could have big impact on their energy consumption and that it would help them become more aware of their usage. We have also tested with real sensors, but our Raspberri Pi short circuited, but we continued the process with dummy data.
+
+The results of our solution helps the users become more aware, use less energy, and use energy at the cheapest time during the day. Possible future reasearch directions includes statistics, room sensors, multiple homes, login and register function and analysis.
 
 ## **Introduction**
+
+
 
 The problem we are planning to solve is related to energy consumption. Our solution is planned to be easily implemented in every home or construction that wants to have better control over their energy consumption. The tremendous rise in electricity prices in Norway and the global energy crisis makes a solution wich helps with decreasing the energy consumption is both relevant to the energy crisis on a global level and for induviduals which take a big burden due to the high electricity prices.
 
