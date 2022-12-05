@@ -47,11 +47,7 @@ public class Client {
             PrintWriter pr = new PrintWriter(socket.getOutputStream());
             pr.println(generator.getUsage());
             pr.flush();
-            pr.println(generator.getDate());
-            pr.flush();
-            pr.println(generator.getCurrentHour());
-            pr.flush();
-            pr.println(generator.getYear());
+            pr.println(generator.getDate()+" " + generator.getCurrentHour());
             pr.flush();
         }catch (IOException ioException){
             System.out.println("Something went wrong, could not send data: "+ioException.getMessage());
