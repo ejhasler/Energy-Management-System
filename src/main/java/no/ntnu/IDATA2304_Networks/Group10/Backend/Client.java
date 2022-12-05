@@ -12,8 +12,7 @@ import java.net.Socket;
  * @version  03.12.2022
  */
 public class Client {
-    private static Generator generator;
-    private static ServerSocket serverSocket;
+    private static GeneratorUsage generatorUsage;
     private static Socket socket;
 
     /**
@@ -23,7 +22,7 @@ public class Client {
      * @throws IOException if the system can't sleep
      */
     public static void main(String[] args) throws IOException {
-        generator = new Generator();
+        generatorUsage = new GeneratorUsage();
         socket = new Socket("localhost",4999);
         while(true) {
             System.out.println("Connected");
@@ -45,9 +44,17 @@ public class Client {
     private static void sendData(){
         try {
             PrintWriter pr = new PrintWriter(socket.getOutputStream());
-            pr.println(generator.getUsage());
+            pr.println(generatorUsage.getUsage());
             pr.flush();
-            pr.println(generator.getDate()+" " + generator.getCurrentHour());
+            pr.println(generatorUsage.getDate()+" " + generatorUsage.getCurrentHour());
+            pr.flush();
+            double price = (Double.parseDouble(generatorUsage.getSpotPrice()) *Double.parseDouble(generatorUsage.getUsage()))/100;
+            pr.println(price);
+            pr.flush();
+
+            pr.println(generatorUsage.getSpotPrice());
+            pr.flush();
+            pr.println(generatorUsage.getDate() + " " + generatorUsage.getCurrentHour());
             pr.flush();
         }catch (IOException ioException){
             System.out.println("Something went wrong, could not send data: "+ioException.getMessage());

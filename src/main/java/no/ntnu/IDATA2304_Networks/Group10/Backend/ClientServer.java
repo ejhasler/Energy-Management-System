@@ -29,12 +29,14 @@ public class ClientServer {
     private static Statement st;
 
     //Name of the table that the data will go into
-    private static final String tableName = "UserData";
+    private static final String TABLE_NAME_1 = "UserData";
+    private static final String TABLE_NAME_2 = "SpotPrice";
 
     private static Connection con;
 
     //The name of the attributes in the table
-    private static final String tableAttributes = "kWh,Time";
+    private static final String TABLE_ATTRIBUTES_1 = "kWh,Time,Price";
+    private static  final String TABLE_ATTRIBUTE_2 = "kWh,Time";
     private static Socket socket;
     private static ServerSocket serverSocket;
 
@@ -72,13 +74,18 @@ public class ClientServer {
      * @throws IOException Throws exception in case of buffered reader not able to read line
      */
     private static void sendToDatabase(BufferedReader bf) throws IOException {
-        String sqlQuery = "INSERT INTO " + tableName + "(" + tableAttributes +
-            ") VALUES(" + bf.readLine() + ",'" + bf.readLine() + "');";
+        String sqlQuery1 = "INSERT INTO " + TABLE_NAME_1 + "(" + TABLE_ATTRIBUTES_1 +
+            ") VALUES(" + bf.readLine() + ",'" + bf.readLine() + "'," + bf.readLine() + ");";
 
-        System.out.println(sqlQuery);
+        String sqlQuery2 = "INSERT INTO " + TABLE_NAME_2 + "(" + TABLE_ATTRIBUTE_2 + ") VALUES(" + bf.readLine() +
+                ",'" + bf.readLine() + "');";
+        System.out.println(sqlQuery1);
+        System.out.println(sqlQuery2);
         try{
             st = con.createStatement();
-            ResultSet rs = st.executeQuery(sqlQuery);
+            ResultSet rs = st.executeQuery(sqlQuery1);
+            rs.next();
+            rs = st.executeQuery(sqlQuery2);
             rs.next();
             st.close();
             System.out.println("Data sent to dbms");

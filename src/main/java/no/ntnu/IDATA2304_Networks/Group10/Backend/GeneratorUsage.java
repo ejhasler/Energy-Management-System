@@ -14,10 +14,11 @@ import java.util.Random;
  * @author Group10
  * @version 02.12.2022
  */
-public class Generator {
+public class GeneratorUsage {
     private double usage;
+    private double spotPrice;
     private DecimalFormat decimalFormat = new DecimalFormat("#.##", new DecimalFormatSymbols(Locale.US));
-    public Generator() {
+    public GeneratorUsage() {
         //Left empty on purpose
     }
 
@@ -66,15 +67,15 @@ public class Generator {
     }
 
     /**
-     * Returns the current price of electricity.
+     * Returns the current usage of electricity.
      * To try and make the generated data as real as possible,
      * it checks the current time and returns the price
      * based on real data.
      *
-     * @return The current price of electricity
+     * @return The current usage of electricity
      */
     public String getUsage() {
-        Generator electricityPrice = new Generator();
+        GeneratorUsage electricityPrice = new GeneratorUsage();
         Random random = new Random();
         if ((electricityPrice.getCurrentTime() >= 100000) & (electricityPrice.getCurrentTime() <= 140000)) {
             this.usage = 0.78 + random.nextDouble(0.24);
@@ -89,5 +90,31 @@ public class Generator {
             this.usage = 0.78 + random.nextDouble(0.48);
         }
         return decimalFormat.format(this.usage);
+    }
+
+    /**
+     * Returns the current price of electricity.
+     * To try and make the generated data as real as possible,
+     * it checks the current time and returns the price
+     * based on real data.
+     *
+     * @return The current price of electricity
+     */
+    public String getSpotPrice() {
+        GeneratorUsage spotPrice = new GeneratorUsage();
+        Random random = new Random();
+        if ((spotPrice.getCurrentTime() >= 100000) & (spotPrice.getCurrentTime() <= 140000)) {
+            this.spotPrice = 370.37 + random.nextDouble(15.62);
+        }
+        else if ((spotPrice.getCurrentTime() >= 140001) & (spotPrice.getCurrentTime() <= 180000))  {
+            this.spotPrice = 213.09 + random.nextDouble(112.54);
+        }
+        else if ((spotPrice.getCurrentTime() >= 180001) & (spotPrice.getCurrentTime() <= 235959)) {
+            this.spotPrice = 155.24 + random.nextDouble(43.56);
+        }
+        else {
+            this.spotPrice = 199.98 + random.nextDouble(96);
+        }
+        return decimalFormat.format(this.spotPrice);
     }
 }
