@@ -16,13 +16,13 @@ This is a prototype solution created by four computer science students in the co
 
 5. **Interest Rates** -> *An **interest rate** is the amount of [interest](https://en.wikipedia.org/wiki/Interest) due per period, as a proportion of the amount lent, deposited, or borrowed (called the [principal sum](https://en.wikipedia.org/wiki/Debt#Principal))*. [Wikipedia](https://en.wikipedia.org/wiki/Interest_rate)
 
-6. **Sequence Number** ->
+6. **Sequence Number** -> *Sequence number is a number defined in TCP protocol, used to track the order of the incomming packets.*
 
-7. **ACK** ->
+7. **ACK** -> *ACK is an aknowledgment message sent in the TCP protocol, to ensure the sender that the packet has been recieved sucsessfully*
 
-8. **Protocol** ->
+8. **Protocol** -> *A defined set of rules and regulation for standardization transmitt of packets and the build of packets over a network*
 
-9. **HTTP** ->
+9. **HTTP** -> *Protocol for sending html(web pages) through a [network](https://en.wikipedia.org/wiki/Computer_network)*
 
 
 
