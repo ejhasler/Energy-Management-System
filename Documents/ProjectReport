@@ -58,7 +58,7 @@ Our project consists of 5 nodes. By nodes we mean different connection points in
 
 The backend components are the client.java and ClientServer.java. Client.java formats the data received from a generator, which works as a virtual sensor, and sends it to the ClientServer.java. The job of ClientServer.java is to act as a server for the client class and a client for the DBMS server. By this we mean that the server's responsibility is to wait for the client to send data, the client's responsibility is to handle the data, insert it into the SQL insert command and then connect to the DBMS and run the command there. In the picture below is an UML chart and shows how the nodes communicates.
 
-"UML chart."![UML diagram, showing the structure of the application](uml_bby.png)
+"UML chart."![UML diagram, showing the structure of the application](UML.png)
 
 ### *Database*
 
