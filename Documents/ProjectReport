@@ -54,15 +54,19 @@ Our solution is planned to private homes, companies, but also usable in other as
 
 ### *Structure of application*
 
-Our project consists of 5 nodes. By nodes we mean different connection points in our structure where the data is either formatted or transferred further to other nodes. We can divide our application into 2 layers, consisting of backend and frontend. In the front end we have 3 nodes, these are the Database Management Systems (DBMS) server, the web server, and the web browser. The DBMS hosts the database and allows us to store and retrieve data in the database. The Web server is the domain holding all the html pages and the PHP and JS scripts. Finally, the web browser, which displays the website and executes the scripts resolving in SQL requests to the DBMS retrieving data from the database. 
+The project consist of GeneratorUsage.java that creates dummy data for the application, backend and a frontend structure. The Database and web part is based in Loopia where it got purchased a domain name "haslerud.tech" by Even Johan Pereira Haslerud, so that the project was inluded an MySQL/MariaDB, UNIX (PHP 8.1/Apache 2.4) configuration, FTP user and SSL which  we could include in the project to get it more secure, will get back on that. 
 
-The backend components are the client.java and ClientServer.java. Client.java formats the data received from a generator, which works as a virtual sensor, and sends it to the ClientServer.java. The job of ClientServer.java is to act as a server for the client class and a client for the DBMS server. By this we mean that the server's responsibility is to wait for the client to send data, the client's responsibility is to handle the data, insert it into the SQL insert command and then connect to the DBMS and run the command there. In the picture below is an UML chart and shows how the nodes communicates.
+The backend components are the client.java and ClientServer.java. Client.java formats the data received from a generator, which works as a virtual sensor, and sends it to the ClientServer.java. The job of ClientServer.java is to act as a server for the client class and a client for the DBMS server. By this we mean that the server's responsibility is to wait for the client to send data, the client's responsibility is to handle the data, insert it into the SQL insert command and then connect to the DBMS and run the command there. With the database knowledge we got from IDATA2303 Data modeling and Database applications, we was able to implemented SQL queries in the ClientServer, so that we could insert the formatted data into the Database based on these queries.
+
+The client.java and ClientServer.java is based on TCP which is connection-based, so it establishes a connection between the receiver and sender and maintains it while transferring data. The TCP protocol in transport layer gurantees that the data arrives completely intact, something that we saw as necessary in our project. In the picture below is an UML chart and shows how the nodes communicates.
 
 "UML chart."![UML diagram, showing the structure of the application](UML.png)
 
 ### *Database*
 
-The application uses a database to store the gathered data, the database is hosted in PHP using a MariaDB server. To send the information from the program to the database, we used Java Database Connectivity (JDBC) to establish a connection to the MariaDB server. By using an INSERT query, the data is organized correctly into the database. The database is the applications memory, it handles all our data and makes it possible to manipulate it in the directions wanted. It is used to print out graphs visualizing the electricity usage.
+The project is based on a MySQL/MariaDB database where we store the data sent from the backend part. The database is hosted on Loopia where we use MySQL/MariaDB, where we have our user on phpMyAdmin that is a free software tool written in PHP, that is intented to handle the administration of MySQL over the Web. 
+
+To send the information from the program to the database, we used Java Database Connectivity (JDBC) to establish a connection to the MariaDB server. By using an INSERT query, the data is organized correctly into the database. The database is the applications memory, it handles all our data and makes it possible to manipulate it in the directions wanted. It is used to print out graphs visualizing the electricity usage.
 
 ### *TCP and data transference*
 
@@ -73,7 +77,14 @@ Our program relies on reliable data transfer. In order to transfer the given dat
 Through out the project, data was needed to be able to represent the electricity usage. Here we looked at several options. One being an electricity plug where one could get the electricity used by the device which was plugged in. This would be a good option, but the plugs found already had an app which returned this information. We ended up with generating data. This way we could make data which represent electricity usage from a whole house. 
 To get data which we can use to represent the electricity usage, we created a class which returns the generated data. The data which we retrieve from the generator is the current time, date, and electricity usage. The data is based on the electricity usage of an average household, and to make the generated data as realistic a possible, the data returned is based on the current time of the day. We could see from different charts, that from 00:00 to 10:00 the levels stayed almost the same, with little to no change. From 10:00 to 14:00 the levels went noticeably up, and when adding a range, the output data would be realistic. From 14:00 to 18:00 we saw that the numbers stayed almost the same, but the real change came around 18:00 to 00:00. Here the electricity usage spiked, but due to it having variations of usage, a range was added to make it realistic. 
 
-![Electricity usage inn homes](electricityUsage.png)<sub> 1. Researchgate</sub>
+![Electricity usage inn homes](electricityUsage.png)<sub> 1. 
+
+Researchgate</sub>
+
+### *Web*
+
+
+
 
 ## **Methodology**
 
