@@ -84,6 +84,12 @@ Researchgate</sub>
 
 ### **Web**
 
+The web development we use CSS, HTML5, JavaScript and PHP. The CSS and HTML5 (Hypertext Markup Langauge) is for styling and designing the website. HTML is the standard markup langauge for Web pages and CSS is the language we use to style an HTML documet and CSS describes how HTML elements should be displayed.
+
+The database and the hosting services for the website "haslerud.tech" is done by Loopia. This gave us the ability to easier create a database, SSL certificate if we wanted and making the project more real. 
+
+As metioned we used PHP in order for the website to get the data from the database. We have two PHP files that have the needed information to create a connections to the database, they are called session.php and db.php. The other PHP files access the database with implemented queries so that we can get the data from the database and inorder to manage it to the website we use JSON encoding so that it can return a string containing the JSON representation of the supplied value. And if the parameter is an array or object, it will be serialized recursively.As metioned we used JavaScript with AJAX so we could read data from the database, without needing to update the website all the time. 
+
 ### **WireShark**
 
 For checking the connection between the dbms and the java backend we troubleshooted with wireshark. ![Picture of the wireshark packets.](images/WireShark.png) We saw the ServerClient speaking to the dmbs. These packets in the picture using the MySQL protocol. By analyzing the packets, the content of the packets could be extracted, and we cross checked it with the SQL queries outputted in the terminal for ServerClient. The MySQL protocol, like the TCP protocol, uses ACK or in this case OK messages which confirms that the data sent was received successfully. After the last query is sent and confirmed received, our backend closes the connection, this message has not an OK message in opposition to the TCP protocol. We could not find any packets between the Client and the ServerClient, this is because it uses localhost and is not transmitting packets over wifi.
@@ -107,7 +113,7 @@ The ServerClient is the first class that runs in the application, this is becaus
 
 ### **Frontend**
 
-Here comes how the result in the frontend.
+The results we got in front end is that we got to display the graph from the data that was inserted in the database from GeneratorUsage.java. We have some buttons that doesn't function, because them are for future work on the project. But on the home button we can display the graph of usage(kWh) and a graph of the price used in kr. And on the Spot Price button we get to display the spot price based on the data from the database created from the GeneratorUsage.java.
 
 ## **Discussion**
 
@@ -117,7 +123,31 @@ We wanted to get data from a sensor and tried getting data from a raspberry pi w
 
 ## **Conclusion and Future Work**
 
-The prototype of the application currently provides us with the ability to see the current spot price and electricity usage, and combines these two to give us the total cost per hour in kroner. In the future we wish to give the user real data which have been taken from a reliable source, along with a way of measuring the electricity usage in different rooms. With the real data it will be easier to calculate the electricity bill for the next month, which can help people manage their economy. To give the application better security, we wish to give the web page an SSL-key to encrypt it. We also hope to give users a login to give them full insight on their data, along with extra security for users. 
+The prototype of the application currently provides us with the ability to see the current spot price and electricity usage, and combines these two to give us the total cost per hour in kroner.
+
+### *Login and Register*
+In this section about future work, we wanted to create a new Table in the Database and button functioning in the web. Where users would be able to create their own user with username, password and two aunthentication. This would make the web more secure for the user and make them more confident for the hole application. 
+
+### *Automation*
+In this part of automation we want the users to able to create morning and nigth automations. Where they can lower the temperature, turning of the lights automatically when they are going to bed. And the morning automation will go on when the people set the clock to when the different heating and lights will go on.
+
+Could also add a work automation that turn of all lights and lower the heating when poeple are going to work or travelling to other countries. Everything can be handled in the web and easy over the internet.
+
+### *House Display*
+
+In the house display part we would organize the hole house like a map, where the user can get full overview over all the rooms in the house and how much kWh. And if the lights are switched on in a certained room, heating, etc.
+
+### *Future Energy Usage*
+
+In th section of Future Energy Usage we would like to use our knowledge from ISTA1003 Statistics where we would use regression to solve future electricity bills for the users based on the historical usage and payments. So, that the user can set of money and know how much the next month are going to cost. 
+
+### *Real Data*
+
+In this part we would give the users a sensor which them could implement in each room, so that we have control of the usage in every room. And that the whole applicaton was based on real raw data instead of dummy data.
+
+### *Security*
+
+This part is the most important for us, and that is we would run our web page on HTTP, but we would buy an SSL certificate that makes the web much more secure. We would then run our webpage on HTTPS and would get more trust from our users, and we would be more secure that data breaches like sensitive information don't would leak. 
 
 
 ## **Referances**
