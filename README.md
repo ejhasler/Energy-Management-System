@@ -1,4 +1,4 @@
-![Logo](images/logo1.png)
+![Logo](Documents/images/logo1.png)
 
 # **Project Report IDATA2304 Autumn 2022**
 This is a prototype solution created by four computer science students in the course IDATA2304 Computer Networks.
@@ -60,7 +60,7 @@ The backend components are the client.java and ClientServer.java. Client.java fo
 
 The client.java and ClientServer.java is based on TCP which is connection-based, so it establishes a connection between the receiver and sender and maintains it while transferring data. The TCP protocol in transport layer gurantees that the data arrives completely intact, something that we saw as necessary in our project. In the picture below is an UML chart and shows how the nodes communicates.
 
-"UML chart."![UML diagram, showing the structure of the application](images/UML.png)
+"UML chart."![UML diagram, showing the structure of the application](Documents/images/UML.png)
 
 ### **Database**
 
@@ -78,7 +78,7 @@ A primary function in the project is that data represents electricity usage. The
 
 To generate this data, the generator class represents an energy sensor. The data retrieved from the generator is the current time, date, and electricity used in one hour. To make the generated data as realistic as possible, the data returned is based on the time of the day. Based on information from different charts, the generator is adjusted so that from 00:00 to 10:00 o’clock the KWH levels are stable, with little to no change. From 10:00 to 14:00 the levels have a noticeable increase, and by the added range, the output data has some random changes, making it more realistic. From 14:00 to 18:00 the usage remains quite stable, and the real change come around 18:00 to 00:00. Here the electricity usage increases drastically, due to people coming back to their house, cooking dinner, watching TV and other activities consuming electricity.
 
-![Electricity usage inn homes](images/electricityUsage.png)<sub> 1. 
+![Electricity usage inn homes](Documents/images/electricityUsage.png)<sub> 1. 
 
 Researchgate</sub>
 
@@ -92,7 +92,7 @@ As metioned we used PHP in order for the website to get the data from the databa
 
 ### **WireShark**
 
-To checking the connection between the DBMS and the java backend we troubleshooted using wireshark. ![Picture of the wireshark packets.](images/WireShark.png) This shows that the ServerClient is speaking to the DBMS. The packets we are discussing, are the packets in the picture using the MySQL protocol. By analyzing the packets, the content of the packets could be extracted, and we cross checked it with the SQL queries outputted in the terminal for ServerClient. The MySQL protocol, like the TCP protocol, uses ACK or in this case OK messages which confirms that the data sent was received successfully. After the last query is sent and confirmed received, our backend closes the connection, this message has not an OK message in opposition to the TCP protocol. We could not find any packets between the Client and the ServerClient, this is because it uses localhost and is not transmitting packets over wifi.
+To checking the connection between the DBMS and the java backend we troubleshooted using wireshark. ![Picture of the wireshark packets.](Documents/images/WireShark.png) This shows that the ServerClient is speaking to the DBMS. The packets we are discussing, are the packets in the picture using the MySQL protocol. By analyzing the packets, the content of the packets could be extracted, and we cross checked it with the SQL queries outputted in the terminal for ServerClient. The MySQL protocol, like the TCP protocol, uses ACK or in this case OK messages which confirms that the data sent was received successfully. After the last query is sent and confirmed received, our backend closes the connection, this message has not an OK message in opposition to the TCP protocol. We could not find any packets between the Client and the ServerClient, this is because it uses localhost and is not transmitting packets over wifi.
 
 
 ## **Methodology**
