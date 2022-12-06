@@ -1,4 +1,4 @@
-package no.ntnu.IDATA2304_Networks.Group10.Backend;
+package no.ntnu.IDATA2304_Networks.Group10.backEnd;
 
 import java.io.IOException;
 import java.io.PrintWriter;
