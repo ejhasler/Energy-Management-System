@@ -11,8 +11,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * Establishes a TCP connection with Server to receive information and sends the
- * information to the database
+ * Opens a server socket for the sender to connect to. Waits for
+ * incoming data. Format data in a given format for further forwarding to the
+ * dbms.
  *
  * @author Group 10
  * @version 03.12.2022
@@ -26,22 +27,24 @@ public class ServerClient {
     //Password used to connect to the database
     private static final String PASSWORD = "evensivert123";
 
+    //Statement that shall be sent
     private static Statement st;
 
-    //Name of the table that the data will go into
+    //Name of the tables that the data will go into
     private static final String TABLE_NAME_1 = "UserData";
     private static final String TABLE_NAME_2 = "SpotPrice";
 
+    //Connection to the db
     private static Connection con;
 
-    //The name of the attributes in the table
+    //The name of the attributes in the tables
     private static final String TABLE_ATTRIBUTES_1 = "kWh,Time,Price";
     private static  final String TABLE_ATTRIBUTE_2 = "kWh,Time";
     private static Socket socket;
     private static ServerSocket serverSocket;
 
     /**
-     * The main method to run the client class.
+     * The main method to run the ServerClient class.
      * @param args
      * @throws IOException in case of buffered reader not able to read line
      * @throws SQLException if error when connecting to database
@@ -67,7 +70,7 @@ public class ServerClient {
     }
 
     /**
-     * Sends information to the connected database.
+     * Format received information and sends information to the connected database.
      *
      * @param bf buffer reader from the client
      * @throws IOException Throws exception in case of buffered reader not able to read line
@@ -97,7 +100,7 @@ public class ServerClient {
     }
 
     /**
-     * Connect to the database with url, username and password
+     * Connect to the database with url, username and password.
      */
     private static void connectToDatabase(){
         try {
@@ -108,6 +111,9 @@ public class ServerClient {
         }
     }
 
+    /**
+     * Terminates the connection to the db.
+     */
     private static void terminateConnectionToDB(){
         try {
             con.close();
