@@ -2,21 +2,25 @@ package no.ntnu.IDATA2304_Networks.Group10.Backend;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * A class for hosting the java server which sends data to a client. Creates a TCP socket so
- * client can connect to.
+ * A class which sends data to a Server. Creates a TCP socket to connect
+ * to a server socket to send the data. Also does a simple formatting
+ * of the data before it sends.
+ *
  * @author Group 10
  * @version  03.12.2022
  */
 public class Client {
+    //The generator mimicking a sensor
     private static GeneratorUsage generatorUsage;
     private static Socket socket;
+    //Sleep duration for data transmit. 1 hour
+    private static final int SLEEP_DURATION = 3600000;
 
     /**
-     * Main method for initiating the server end.
+     * Main method for initiating the client end.
      *
      * @param args
      * @throws IOException if the system can't sleep
@@ -29,7 +33,7 @@ public class Client {
             Client.sendData();
 
             try {
-                Thread.sleep(3600000); // 60 minutes sleep between
+                Thread.sleep(SLEEP_DURATION); // 60 minutes sleep
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
