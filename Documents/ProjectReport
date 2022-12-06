@@ -54,10 +54,11 @@ Our solution is planned to private homes, companies, but also usable in other as
 
 ### *Structure of application*
 
-Our project consists of 5 nodes. By nodes we mean different connection points in our structure where the data is either formated or tranfered further to other nodes. We can devide our application into 2 layers, constisting of backend and frontend. In the front end we have 3 nodes, these are the dbms server, which host the database and allows us to store data and retrieve the data inside the database, the web server, which is the domain holding the different html pages and the php and js scripts, and the web browser, which displays the website and execute the scripts resolving in SQL requests to the dbms retrieving data from the database. 
+Our project consists of 5 nodes. By nodes we mean different connection points in our structure where the data is either formatted or transferred further to other nodes. We can divide our application into 2 layers, consisting of backend and frontend. In the front end we have 3 nodes, these are the Database Management Systems (DBMS) server, the web server, and the web browser. The DBMS hosts the database and allows us to store and retrieve data in the database. The Web server is the domain holding all the html pages and the PHP and JS scripts. Finally, the web browser, which displays the website and executes the scripts resolving in SQL requests to the DBMS retrieving data from the database. 
 
-The backend components are the client.java and ClientServer.java. Client.java are formatting the data recieved from a generator which works as an virtuel sensor, and sending it to the ClientServer.java. The job of ClientServer.java is to act as a server for the client class and a client for the dbms server. By this we mean that the server's responsebility is to wait for the client to send data, the client's responsebility is to handle the data, format it into a sql insert query and then connect to the dbms and run the sql query. Under is a UML chart og how the nodes communicates.
-"This is the structure of our ducking report shit stuff."![UML diagram, showing the structure of the application](uml_bby.png)
+The backend components are the client.java and ClientServer.java. Client.java formats the data received from a generator, which works as a virtual sensor, and sends it to the ClientServer.java. The job of ClientServer.java is to act as a server for the client class and a client for the DBMS server. By this we mean that the server's responsibility is to wait for the client to send data, the client's responsibility is to handle the data, insert it into the SQL insert command and then connect to the DBMS and run the command there. In the picture below is an UML chart and shows how the nodes communicates.
+
+"UML chart."![UML diagram, showing the structure of the application](uml_bby.png)
 
 ### *Database*
 
