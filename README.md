@@ -24,8 +24,6 @@ This is a prototype solution created by four computer science students in the co
 
 9. **HTTP** -> *Protocol for sending html(web pages) through a [network](https://en.wikipedia.org/wiki/Computer_network).*
 
-
-
 ## **Abstract**
 The world is going into a global crisis situation where the energy prices, gas prices, inflation and the interest rates are reaching for the sky. These factors are causing extremely high energy and consume prices, and is making it very difficult for people to pay their electricity bills. 
 
@@ -140,24 +138,22 @@ A SSL cerificate is crucial for our website. This is something we really wanted 
 The prototype of the application currently provides us with the ability to see the current spot price and electricity usage, and combines these two to give us the total cost per hour in kroner.
 
 ### *Login and Register*
-In this section about future work, we wanted to create a new Table in the Database and button functioning in the web. Where users would be able to create their own user with username, password and two aunthentication. This would make the web more secure for the user and make them more confident for the hole application. 
+In this section about future work, we wanted to create a new Table in the Database and button functioning in the web. Where users would be able to create their own user with username, password and two-factor aunthentication. This would make the web more secure for the user and make them more confident for the whole application. 
 
 ### *Automation*
-In this part of automation we want the users to able to create morning and nigth automations. Where they can lower the temperature, turning of the lights automatically when they are going to bed. And the morning automation will go on when the people set the clock to when the different heating and lights will go on.
-
-Could also add a work automation that turn of all lights and lower the heating when poeple are going to work or travelling to other countries. Everything can be handled in the web and easy over the internet.
+In this part of automation we want the users to able to create morning and nigth automations. Where they for example can lower the temperature and turn the lights of automatically when they are going to bed. The morning automation will start on a chosen time where eventual heating or lights would turn on. Other automated settings could be added to turn of lights, heat, or other unnecessary electric objects. This would be handled via the web page.
 
 ### *House Display*
 
-In the house display part we would organize the hole house like a map, where the user can get full overview over all the rooms in the house and how much kWh. And if the lights are switched on in a certained room, heating, etc.
+In the house display part we would organize the whole house like a map, where the user can get full overview over all the rooms in the house and how much kWh is used in these. As well as information about what objects in these rooms that are currently using electricity.
 
 ### *Future Energy Usage*
 
-In th section of Future Energy Usage we would like to use our knowledge from ISTA1003 Statistics where we would use regression to solve future electricity bills for the users based on the historical usage and payments. So, that the user can set of money and know how much the next month are going to cost. 
+We would also like to use our knowledge from ISTA1003 Statistics where we would use regression to predict later electricity bills for the users based on the earlier usage and a trend in the spot prices. This way the user can better control their economy.
 
 ### *Real Data*
 
-In this part we would give the users a sensor which them could implement in each room, so that we have control of the usage in every room. And that the whole applicaton was based on real raw data instead of dummy data.
+The application is currently using dummy data that is based on real values, but in the future development of the application we would use real sensors that will collect raw data.
 
 ### *Security*
 
@@ -166,4 +162,14 @@ This part is the most important for us, and that is we would run our web page on
 
 ## **Referances**
 
-1. [Researchgate](https://www.researchgate.net/figure/Example-of-power-consumption-of-a-household-over-a-24-hour-period-measured-in-kW_fig3_235644349), picture visualizing the the consetp used in generator class. (03.12.2022, Researchgate)
+1. [Researchgate](https://www.researchgate.net/figure/Example-of-power-consumption-of-a-household-over-a-24-hour-period-measured-in-kW_fig3_235644349), picture visualizing the the consept used in generator class. (03.12.2022, Researchgate)
+
+2. [php] (https://www.php.net/manual/en/function.json-encode.php), describes JSON encoding. (06.12.2022, php)
+
+3. [W3schools] (https://www.w3schools.com/js/js_ajax_intro.asp), Learning about ajax introduction. (06.12.2022, W3schools)
+
+4. [W3schools] (https://www.w3schools.com/css/), Describes css. (06.12.2022, w3schools) 
+
+5. [W3schools] (https://www.w3schools.com/html/), Describes html. (06.12.2022, w3schools)
+
+6. [Loopia] (https://www.loopia.no/?gclid=CjwKCAiA9qKbBhAzEiwAS4yeDSO4wL7GRR82gVcnslKXUY5QGNOaN0JjmcD5t0O1hgH44pxvUq9B7hoCqNYQAvD_BwE), link to the website that hosts the database and web page. (06.12.2022, Loopia)
