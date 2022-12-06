@@ -1,10 +1,10 @@
-![Logo](logo1.png)
+![Logo](images/logo1.png)
 
 # **Project Report IDATA2304 Autumn 2022**
 This is a prototype solution created by four computer science students in the course IDATA2304 Computer Networks.
 
 ## **Termonology**
-### *Term and Definition* 
+### **Term and Definition** 
 
 1. **TCP** -> *Transmission Control Protocol (TCP) is one of the main [protocols](https://en.wikipedia.org/wiki/Communication_protocol) of the [Internet Protocol suite](https://en.wikipedia.org/wiki/Internet_protocol_suite).* [Wikipedia](https://en.wikipedia.org/wiki/Transmission_Control_Protocol)
 
@@ -18,11 +18,11 @@ This is a prototype solution created by four computer science students in the co
 
 6. **Sequence Number** -> *Sequence number is a number defined in TCP protocol, used to track the order of the incomming packets.*
 
-7. **ACK** -> *ACK is an aknowledgment message sent in the TCP protocol, to ensure the sender that the packet has been recieved sucsessfully*
+7. **ACK** -> *ACK is an aknowledgment message sent in the TCP protocol, to ensure the sender that the packet has been recieved sucsessfully.*
 
-8. **Protocol** -> *A defined set of rules and regulation for standardization transmitt of packets and the build of packets over a network*
+8. **Protocol** -> *A defined set of rules and regulation for standardization transmitt of packets and the build of packets over a network.*
 
-9. **HTTP** -> *Protocol for sending html(web pages) through a [network](https://en.wikipedia.org/wiki/Computer_network)*
+9. **HTTP** -> *Protocol for sending html(web pages) through a [network](https://en.wikipedia.org/wiki/Computer_network).*
 
 
 
@@ -52,7 +52,7 @@ Our solution is planned to private homes, companies, but also usable in other as
 
 ## **Theory and technology**
 
-### *Structure of application*
+### **Structure of application**
 
 The project consist of GeneratorUsage.java that creates dummy data for the application, backend and a frontend structure. The Database and web part is based in Loopia where it got purchased a domain name "haslerud.tech" by Even Johan Pereira Haslerud, so that the project was inluded an MySQL/MariaDB, UNIX (PHP 8.1/Apache 2.4) configuration, FTP user and SSL which  we could include in the project to get it more secure, will get back on that. 
 
@@ -60,30 +60,32 @@ The backend components are the client.java and ClientServer.java. Client.java fo
 
 The client.java and ClientServer.java is based on TCP which is connection-based, so it establishes a connection between the receiver and sender and maintains it while transferring data. The TCP protocol in transport layer gurantees that the data arrives completely intact, something that we saw as necessary in our project. In the picture below is an UML chart and shows how the nodes communicates.
 
-"UML chart."![UML diagram, showing the structure of the application](UML.png)
+"UML chart."![UML diagram, showing the structure of the application](images/UML.png)
 
-### *Database*
+### **Database**
 
 The project is based on a MySQL/MariaDB database where we store the data sent from the backend part. The database is hosted on Loopia where we use MySQL/MariaDB, where we have our user on phpMyAdmin that is a free software tool written in PHP, that is intented to handle the administration of MySQL over the Web. 
 
 To send the information from the program to the database, we used Java Database Connectivity (JDBC) to establish a connection to the MariaDB server. By using an INSERT query, the data is organized correctly into the database. The database is the applications memory, it handles all our data and makes it possible to manipulate it in the directions wanted. It is used to print out graphs visualizing the electricity usage.
 
-### *TCP and data transference*
+### **TCP and data transference**
 
 Our program relies on reliable data transfer. In order to transfer the given data from the generator or sensor it is crucial that every detail of the information is transferred. To ensure this, our program takes use of the data transfer protocol called Transmission Control Protocol (TCP) when data is exchanged between Client.java and ServerClient.java. Reliable data transfer between these classes are crucial for the data. The usage of TCP makes the data transfer solid so we can upload the data to our database, knowing it is correct. If we decided that TCP was not necessary and tried using a different transfer protocol like UDP, we could not ensure valid data. This may cause the data displayed on our website to be unreliable or even corrupted. The reasoning of this is that UDP protocol does not include a 3-way handshake like TCP that guarantees reliable data transmission. The application would function with UDP, but it would not ensure that the graphs or data presented on the sites are correct and viable.
 
-### *Generating Data*
+### **Generating Data**
 
 Through out the project, data was needed to be able to represent the electricity usage. Here we looked at several options. One being an electricity plug where one could get the electricity used by the device which was plugged in. This would be a good option, but the plugs found already had an app which returned this information. We ended up with generating data. This way we could make data which represent electricity usage from a whole house. 
 To get data which we can use to represent the electricity usage, we created a class which returns the generated data. The data which we retrieve from the generator is the current time, date, and electricity usage. The data is based on the electricity usage of an average household, and to make the generated data as realistic a possible, the data returned is based on the current time of the day. We could see from different charts, that from 00:00 to 10:00 the levels stayed almost the same, with little to no change. From 10:00 to 14:00 the levels went noticeably up, and when adding a range, the output data would be realistic. From 14:00 to 18:00 we saw that the numbers stayed almost the same, but the real change came around 18:00 to 00:00. Here the electricity usage spiked, but due to it having variations of usage, a range was added to make it realistic. 
 
-![Electricity usage inn homes](electricityUsage.png)<sub> 1. 
+![Electricity usage inn homes](images/electricityUsage.png)<sub> 1. 
 
 Researchgate</sub>
 
-### *Web*
+### **Web**
 
+### **WireShark**
 
+For checking the connection between the dbms and the java backend we troubleshooted with wireshark. ![Picture of the wireshark packets.](images/WireShark.png) We saw the ServerClient speaking to the dmbs. These packets in the picture using the MySQL protocol. By analyzing the packets, the content of the packets could be extracted, and we cross checked it with the SQL queries outputted in the terminal for ServerClient. The MySQL protocol, like the TCP protocol, uses ACK or in this case OK messages which confirms that the data sent was received successfully. After the last query is sent and confirmed received, our backend closes the connection, this message has not an OK message in opposition to the TCP protocol. We could not find any packets between the Client and the ServerClient, this is because it uses localhost and is not transmitting packets over wifi.
 
 
 ## **Methodology**
